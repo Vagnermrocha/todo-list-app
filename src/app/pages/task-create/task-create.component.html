@@ -1,0 +1,22 @@
+<form (submit)="formSubmit()">
+  <mat-form-field appearance="fill">
+    <mat-label>Título</mat-label>
+    <!-- <input [value]="titulo" (input)="registraTitulo($event)" matInput> -->
+    <input [(ngModel)]="novaTarefa.titulo" name="titulo" matInput aria-label="titulo">
+  </mat-form-field>
+
+  <mat-form-field appearance="fill">
+    <mat-label>Descrição</mat-label>
+    <textarea [(ngModel)]="novaTarefa.descricao" name="descricao" matInput></textarea>
+  </mat-form-field>
+
+  <mat-form-field appearance="fill">
+    <mat-label>Data de Entrega</mat-label>
+    <input [(ngModel)]="novaTarefa.dataEntrega" name="dataEntrega" type="date" matInput aria-label="dataEntrega">
+  </mat-form-field>
+
+  <mat-checkbox [(ngModel)]="novaTarefa.concluida" name="concluida">Concluída</mat-checkbox>
+
+  <button mat-button type="submit">Enviar</button>
+</form>
+
