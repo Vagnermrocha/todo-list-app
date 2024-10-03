@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, Output, EventEmitter } from '@angular/core';
 import Tarefa from 'src/app/models/Tarefa';
 
 @Component({
@@ -7,49 +7,28 @@ import Tarefa from 'src/app/models/Tarefa';
   styleUrls: ['./task-item.component.css']
 })
 export class TaskItemComponent {
-  //// No lugar de uma tarefa indefinida, cria-se uma nova tarefa com valores padrão (default)
-  // @Input('t') tarefa: Tarefa = new Tarefa("Tarefa 1", "Descrição 1", "2023-10-06");
-
-  //// Simplemente definindo uma tarefa como indefinida
   @Input('t') tarefa?: Tarefa;
-  arrayTarefas: any;
+  @Output() tarefaRemovida = new EventEmitter<void>();
+  @Output() tarefaEditada = new EventEmitter<Tarefa>();
 
-  // removerTarefa() {
-  //   const arrayTarefas: Tarefa[] = JSON.parse(localStorage.getItem("arrayTarefas") || "[]");
-  //   const indice = arrayTarefas.findIndex((t) => t.id == this.tarefa?.id);
-  //   arrayTarefas.splice(indice, 1);
-  //   localStorage.setItem("arrayTarefas", JSON.stringify(arrayTarefas));
-  // }
-  editarTarefa() {
-    const arrayTarefas: Tarefa[] = JSON.parse(localStorage.getItem("arrayTarefas") || "[]");
-    const indice = arrayTarefas.findIndex((t) => t.id == this.tarefa?.id);
-    arrayTarefas.splice(indice, 1);
-    localStorage.setItem("arrayTarefas", JSON.stringify(arrayTarefas));
-  }
-  enviarTarefa() {
+  removerTarefa() {
     if (this.tarefa) {
       const arrayTarefas: Tarefa[] = JSON.parse(localStorage.getItem("arrayTarefas") || "[]");
-      arrayTarefas.push(this.tarefa);
-      localStorage.setItem("arrayTarefas", JSON.stringify(arrayTarefas));
-      console.log('Tarefa enviada com sucesso!');
-    } else {
-      console.error('Erro ao enviar a tarefa: tarefa não definida');
+      const indice = arrayTarefas.findIndex((t) => t.id === this.tarefa?.id);
+      if (indice !== -1) {
+        arrayTarefas.splice(indice, 1);
+        localStorage.setItem("arrayTarefas", JSON.stringify(arrayTarefas));
+        console.log('Tarefa removida com sucesso!');
+        this.tarefaRemovida.emit();
+      } else {
+        console.error('Erro ao remover a tarefa: tarefa não encontrada');
+      }
     }
   }
-  removerTarefa(tarefa: Tarefa) {
-    const arrayTarefas: Tarefa[] = JSON.parse(localStorage.getItem("arrayTarefas") || "[]");
-    const indice = arrayTarefas.findIndex((t) => t.id == this.tarefa?.id);
-    if (indice !== -1) {
-      arrayTarefas.splice(indice, 1);
-      localStorage.setItem("arrayTarefas", JSON.stringify(arrayTarefas));
-      console.log('Tarefa removida com sucesso!');
-      this.atualizarListaTarefas();
-    } else {
-      console.error('Erro ao remover a tarefa: tarefa não encontrada');
+
+  editarTarefa() {
+    if (this.tarefa) {
+      this.tarefaEditada.emit(this.tarefa);
     }
-  }
-  atualizarListaTarefas() {
-    this.arrayTarefas = JSON.parse(localStorage.getItem("arrayTarefas") || "[]");
   }
 }
-

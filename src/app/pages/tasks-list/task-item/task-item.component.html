@@ -1,42 +1,10 @@
-
-<!-- <mat-expansion-panel hideToggle>
-  <mat-expansion-panel-header>{{ tarefa?.titulo }}</mat-expansion-panel-header>
-  <ul>
-    <li>Descrição: {{ tarefa?.descricao }}</li>
-    <li>Data de Entrega: {{ tarefa?.dataEntrega }}</li>
-    <li>Concluída: {{ tarefa?.concluida }}</li>
-  </ul>
-</mat-expansion-panel> -->
-
-<!-- <mat-expansion-panel *ngIf="tarefa != undefined" hideToggle>
+<mat-expansion-panel *ngIf="tarefa" hideToggle>
   <mat-expansion-panel-header>{{ tarefa.titulo }}</mat-expansion-panel-header>
   <ul>
     <li>Descrição: {{ tarefa.descricao }}</li>
     <li>Data de Entrega: {{ tarefa.dataEntrega }}</li>
-    <li>Concluída: {{ tarefa.concluida }}</li>
+    <li>Concluída: {{ tarefa.concluida ? 'Sim' : 'Não' }}</li>
   </ul>
-  <button mat-raised-button color="primary"(click)="editarTarefa()">Editar</button>
+  <button mat-raised-button color="primary" (click)="editarTarefa()">Editar</button>
   <button mat-raised-button color="warn" (click)="removerTarefa()">Remover</button>
-</mat-expansion-panel> -->
-
-<!-- <mat-expansion-panel *ngIf="tarefa != undefined" hideToggle>
-  <mat-expansion-panel-header>{{ tarefa.titulo }}</mat-expansion-panel-header>
-  <ul>
-    <li>Descrição: {{ tarefa.descricao }}</li>
-    <li>Data de Entrega: {{ tarefa.dataEntrega }}</li>
-    <li>Concluída: {{ tarefa.concluida }}</li>
-  </ul>
-  <button mat-raised-button color="primary" (click)="enviarTarefa()">Enviar</button>
-  <button mat-raised-button color="warn" (click)="removerTarefa(tarefa)">Remover</button>
-</mat-expansion-panel> -->
-
-<mat-expansion-panel *ngFor="let tarefa of arrayTarefas" hideToggle>
-  <mat-expansion-panel-header>{{ tarefa.titulo }}</mat-expansion-panel-header>
-  <ul>
-    <li>Descrição: {{ tarefa.descricao }}</li>
-    <li>Data de Entrega: {{ tarefa.dataEntrega }}</li>
-    <li>Concluída: {{ tarefa.concluida }}</li>
-  </ul>
-  <button mat-raised-button color="primary" (click)="enviarTarefa()">Enviar</button>
-  <button mat-raised-button color="warn" (click)="removerTarefa(tarefa)">Remover</button>
 </mat-expansion-panel>

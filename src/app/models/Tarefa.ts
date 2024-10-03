@@ -1,9 +1,8 @@
-
 export default class Tarefa {
   id: number;
   titulo: string;
   descricao: string;
-  dataEntrega: Date;
+  dataEntrega: string;
   concluida: boolean;
 
   constructor(titulo: string, descricao: string, dataEntrega: string, concluida: boolean = false, atualizaId: boolean = false) {
@@ -18,7 +17,7 @@ export default class Tarefa {
 
     this.titulo = titulo;
     this.descricao = descricao;
-    this.dataEntrega = new Date(dataEntrega);
+    this.dataEntrega = dataEntrega;
     this.concluida = concluida;
   }
 }

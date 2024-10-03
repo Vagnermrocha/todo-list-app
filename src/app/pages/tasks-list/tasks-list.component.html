@@ -1,14 +1,4 @@
-<!-- Modelo antigo -->
-<!-- <ul>
-  <li *ngFor="let tarefa of arrayTarefas">
-    {{ tarefa.titulo }} ({{ tarefa.dataEntrega }})
-  </li>
-</ul> -->
-
 <mat-accordion>
-  <app-task-item *ngFor="let tarefa of arrayTarefas" [t]="tarefa">
+  <app-task-item *ngFor="let tarefa of arrayTarefas" [t]="tarefa" (tarefaRemovida)="atualizarListaTarefas()" (tarefaEditada)="editarTarefa($event)">
   </app-task-item>
-  <app-task-item></app-task-item>
 </mat-accordion>
-
-

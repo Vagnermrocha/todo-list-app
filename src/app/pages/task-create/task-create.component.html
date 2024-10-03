@@ -1,7 +1,6 @@
 <form (submit)="formSubmit()">
   <mat-form-field appearance="fill">
     <mat-label>Título</mat-label>
-    <!-- <input [value]="titulo" (input)="registraTitulo($event)" matInput> -->
     <input [(ngModel)]="novaTarefa.titulo" name="titulo" matInput aria-label="titulo">
   </mat-form-field>
 
@@ -19,4 +18,3 @@
 
   <button mat-button type="submit">Enviar</button>
 </form>
-
