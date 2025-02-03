@@ -11,6 +11,7 @@ import { PagesModule } from './pages/pages.module';
 
 // Componentes que fazem parte do projeto
 import { AppComponent } from './app.component';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,9 @@ import { AppComponent } from './app.component';
     BrowserAnimationsModule,
     SharedModule,
     PagesModule,
-    MaterialModule
+    MaterialModule,
+    HttpClientModule,
+
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -1,0 +1,18 @@
+{
+  "tarefas": [
+    {
+      "id": "1",
+      "titulo": "Hoje tem jogo palmeiras",
+      "descricao": "Palmeiras X Guarani",
+      "dataEntrega": "2025-02-02",
+      "concluida": true
+    },
+    {
+      "id": "2",
+      "titulo": "Hoje estou muito feliz",
+      "descricao": "Sou it developer junior ",
+      "dataEntrega": "2025-02-03",
+      "concluida": true
+    }
+  ]
+}
