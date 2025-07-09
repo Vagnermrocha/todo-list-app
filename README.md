@@ -1,27 +1,56 @@
-# TodoListApp
+✅ ToDo List App
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 15.2.6.
+Aplicação desenvolvida com Angular 15.2.6 para gerenciamento de tarefas. O objetivo é criar uma lista de afazeres simples, com foco em componentização, boas práticas e responsividade.
 
-## Development server
+🚀 Tecnologias utilizadas
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+- Angular 15.2.6
+- TypeScript
+- HTML / CSS
+- Angular CLI
 
-## Code scaffolding
+📦 Funcionalidades
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+- ✅ Adicionar novas tarefas
+- ✅ Marcar tarefas como concluídas
+- ✅ Remover tarefas
+- ✅ Interface responsiva e intuitiva
 
-## Build
+▶️ Como executar o projeto
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+1. Clone o repositório
 
-## Running unit tests
+`bash
+git clone https://github.com/Vagnermrocha/todo-list-app.git
+cd todo-list-app
+`
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+2. Instale as dependências
 
-## Running end-to-end tests
+`bash
+npm install
+`
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+3. Inicie o servidor de desenvolvimento
 
-## Further help
+`bash
+ng serve
+`
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+Acesse em: http://localhost:4200
+
+📚 Aprendizados
+
+Este projeto foi criado para praticar:
+- Criação e organização de componentes
+- Manipulação de eventos e dados no Angular
+- Estilização básica e responsividade
+- Boas práticas com Angular CLI
+
+📄 Licença
+
+Este projeto está sob a licença MIT.
+
+---
+
+Desenvolvido com 💻 por Vagner Rocha
