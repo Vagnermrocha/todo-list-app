@@ -47,10 +47,6 @@ Este projeto foi criado para praticar:
 - Estilização básica e responsividade
 - Boas práticas com Angular CLI
 
-📄 Licença
-
-Este projeto está sob a licença MIT.
-
 ---
 
 Desenvolvido com 💻 por Vagner Rocha
